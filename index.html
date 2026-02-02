@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Verification Request</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a generic font for better aesthetics -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 1. MANDATORY DISCLAIMER OVERLAY -->
+    <div id="disclaimer-overlay" class="overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>⚠️ Disclaimer</h2>
+            </div>
+            <div class="modal-body">
+                <p>This website is a <strong>computer science project simulation</strong> designed to demonstrate how
+                    phishing attacks work.</p>
+                <ul class="disclaimer-list">
+                    <li>This is <strong>NOT</strong> an official Google or law enforcement page.</li>
+                    <li>No personal data is collected, stored, or transmitted.</li>
+                    <li>Inputs are intentionally discarded and not processed.</li>
+                    <li><strong>Do not enter real passwords.</strong></li>
+                </ul>
+                <p class="small">By clicking "I Understand", you acknowledge this is for educational awareness purposes
+                    only.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-accept-disclaimer" class="btn-accept">I Understand</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. FEAR-BASED EMAIL VIEW -->
+    <main id="view-email" class="view hidden">
+        <div class="email-app-wrapper">
+
+            <div class="email-content">
+                <!-- Updated Header matching reference image -->
+                <div class="email-header-ref">
+                    <div class="sender-avatar">S</div>
+                    <div class="header-details-col">
+                        <div class="sender-row">
+                            <div class="sender-info">
+                                <span class="sender-name">Security Team</span>
+                                <span class="sender-address">&lt;security-alert@google.com&gt;</span>
+                            </div>
+                            <span class="email-date">Today, 10:23 AM</span>
+                        </div>
+                        <div class="recipient-row">
+                            To: You
+                        </div>
+                    </div>
+                </div>
+
+                <div class="email-body-text">
+                    <h1>Urgent: Unusual Account Activity In Process</h1>
+                    <p>Dear User,</p>
+                    <p>We have detected unusual activity on your email account. Your account has been flagged for
+                        potential involvement in illegal activities.</p>
+                    <p>You must verify your identity immediately to prevent permanent account suspension.</p>
+
+                    <p class="warning-bold">You must verify your identity within 24 hours to prove your innocence and
+                        prevent legal proceedings.</p>
+
+                    <div class="action-container">
+                        <button id="btn-verify-link" class="btn-verify-blue">VERIFY NOW</button>
+                    </div>
+
+                    <p class="footer-ref">Reference ID: #99382-SEC</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. LOGIN PAGE VIEW (GOOGLE STYLE - TWO COLUMN) -->
+    <main id="view-login" class="view hidden">
+        <div class="login-wrapper">
+            <div class="login-card-wide">
+                <div id="login-progress-bar" class="progress-bar hidden">
+                    <div class="progress-bar-value"></div>
+                </div>
+
+                <!-- STEP 1: EMAIL -->
+                <div id="login-step-email" class="login-step">
+                    <div class="left-col">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 48 48" width="48" height="48" style="display: block;">
+                                <path fill="#EA4335"
+                                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z">
+                                </path>
+                                <path fill="#4285F4"
+                                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z">
+                                </path>
+                                <path fill="#FBBC05"
+                                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z">
+                                </path>
+                                <path fill="#34A853"
+                                    d="M24 48c6.48 0 11.95-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z">
+                                </path>
+                                <path fill="none" d="M0 0h48v48H0z"></path>
+                            </svg>
+                        </div>
+                        <h2>Sign in</h2>
+                        <div class="subtitle">Use your Google Account</div>
+                    </div>
+
+                    <div class="right-col">
+                        <form id="form-email-step" novalidate>
+                            <div class="form-group">
+                                <input type="email" id="email-step-input" class="text-input" placeholder=" " required>
+                                <label for="email-step-input" class="floating-label">Email or phone</label>
+                            </div>
+
+                            <a href="#" class="link-forgot">Forgot email?</a>
+
+                            <div class="info-message">
+                                Not your computer? Use Guest mode to sign in privately. <a href="#">Learn more</a>
+                            </div>
+
+                            <div class="form-footer-actions">
+                                <button type="button" class="btn-create-account">Create account</button>
+                                <button type="submit" class="btn-primary-rounded">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- STEP 2: PASSWORD -->
+                <div id="login-step-password" class="login-step hidden">
+                    <div class="left-col">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 48 48" width="48" height="48" style="display: block;">
+                                <path fill="#EA4335"
+                                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z">
+                                </path>
+                                <path fill="#4285F4"
+                                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z">
+                                </path>
+                                <path fill="#FBBC05"
+                                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z">
+                                </path>
+                                <path fill="#34A853"
+                                    d="M24 48c6.48 0 11.95-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z">
+                                </path>
+                                <path fill="none" d="M0 0h48v48H0z"></path>
+                            </svg>
+                        </div>
+                        <h2>Welcome</h2>
+                        <div id="user-chip-wrapper" class="user-chip-wrapper">
+                            <span class="user-chip-icon">
+                                <svg focusable="false" height="20px" viewBox="0 0 24 24" width="20px" fill="#5f6368">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.36 14.83c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span id="display-email" class="user-chip-email"></span>
+                            <span class="user-chip-arrow">
+                                <svg focusable="false" height="24px" viewBox="0 0 24 24" width="24px" fill="#5f6368">
+                                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="right-col">
+                        <form id="form-password-step" novalidate>
+                            <div class="form-group">
+                                <input type="password" id="password-step-input" class="text-input" placeholder=" "
+                                    required>
+                                <label for="password-step-input" class="floating-label">Enter your password</label>
+                            </div>
+
+                            <div class="show-password-container">
+                                <input type="checkbox" id="show-password-check">
+                                <label for="show-password-check">Show password</label>
+                            </div>
+
+                            <div class="form-footer-actions">
+                                <a href="#" class="btn-create-account">Forgot password?</a>
+                                <button type="submit" class="btn-primary-rounded">Next</button>
+                            </div>
+
+                            <!-- ERROR & LOADING Feedback containers for PASSWORD STEP -->
+                            <div id="auth-feedback" class="feedback-area hidden">
+                                <div id="error-msg" class="error-msg hidden">
+                                    <svg class="error-icon" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                                    </svg>
+                                    <span>Verification failed. Please wait while we recheck your account
+                                        integrity...</span>
+                                </div>
+                                <div id="loading-msg" class="loading-msg hidden">
+                                    <div class="spinner"></div>
+                                    <span>Processing verification...</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="login-footer-links-wide">
+                <div class="language-selector">English (United States) ▼</div>
+                <div class="footer-links-right">
+                    <span>Help</span>
+                    <span>Privacy</span>
+                    <span>Terms</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 5. PHISHING ALERT / EDUCATIONAL VIEW -->
+    <main id="view-alert" class="view hidden">
+        <div class="alert-content">
+            <div class="alert-header">
+                <div class="icon-pulse">🚨</div>
+                <h1>PHISHING TRAP TRIGGERED</h1>
+            </div>
+
+            <div class="alert-card failure-notice">
+                <h2>If this were real, your account would be stolen by now.</h2>
+                <p>You successfully entered your credentials into a fake website.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        Phishing Trap Project – School Demo – Educational Use Only
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
