@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayDisclaimer.style.opacity = '0';
         setTimeout(() => {
             overlayDisclaimer.classList.add('hidden');
-            showView(viewEmail);
+            resetLoginFlow();
+            showView(viewLogin);
         }, 300);
     });
 
